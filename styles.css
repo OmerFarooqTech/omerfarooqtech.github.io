@@ -1,0 +1,370 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #282F37; /* Dark Grey */
+}
+
+html {
+      scroll-behavior: smooth;
+      }
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #CCCCCC
+}
+
+.intro-duction{
+    height: 100vh;
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+h2{
+    font-size: 2.5em; /* Adjust font size as needed */
+}
+
+.read-intro {
+    text-align: center;
+    padding: 10px;
+    color: #CCCCCC;
+    margin-top: 0px; /* Adjust this value to move the section lower */
+    max-width: 1200px;
+    
+}
+
+/*------------------------------Write up section Starts here ------------------------------*/
+
+.custom-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #1a1a2e, #162447); /* Blend of dark blue and dark grey */
+    display: flex; /* Use flexbox to center the container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height of the viewport */
+}
+
+.custom-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 3 cards per row */
+    gap: 30px 50px; /* Set equal gap for both rows and columns */
+    margin: 0 auto;
+    max-width: 1200px; /* Optional: Set a max width for the container */
+    width: 100%; /* Ensure the container takes full width */
+}
+
+.custom-headline {
+    color: #39ff14; /* Neon green color */
+    text-align: center; /* Center the headline */
+    font-size: 2.5em; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Space below the headline */
+    text-shadow: 0 0 1px 
+}
+
+.write-ups-section {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.custom-write-ups-card {
+    position: relative; /* Set position to relative for the text area */
+    background-color: #1a1a2e; /* Same as background color */
+    border: 2px solid #0f0f1a; /* Darker shade of background color for the border */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
+    overflow: hidden;
+    width: 100%; /* Set width to 100% of the grid cell */
+    max-width: 250px; /* Set a max width for each card */
+    aspect-ratio: 3 / 3.8; /* set the aspect ratio (width / height) */
+}
+
+.custom-text-area {
+    padding: 15px;
+    background-color: rgba(211, 211, 211, 0.5); /* Light grey with 50% transparency */
+    color: #d3d3d3; /* Soft light grey color for text */
+    position: absolute; /* Position it absolutely within the card */
+    bottom: 0; /* Align to the bottom of the card */
+    left: 0; /* Align to the left */
+    right: 0; /* Stretch to the right */
+    height: 40%; /* Set height to 40% of the card */
+    display: flex; /* Use flexbox to center text */
+    justify-content: center; /* Center text vertically */
+}
+
+.custom-h2, .custom-p {
+    margin: 0; /* Remove default margin */
+}
+
+.custom-image-area {
+    height: 65%; /* 35% for image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-image-area img {
+    width: 100%; /* Stretch the image to fill the width of the container */
+    height: 100%; /* Stretch the image to fill the height of the container */
+    object-fit: cover; /* This will stretch the image to fit the container */
+}
+
+/*------------------------------News styling starts here--------------------------------------*/
+
+.latest-news {
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px;
+    background-color: #282F37; /* Dark Grey background */
+    color: #FFFFFF; /* White text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+}
+
+.latest-news h2 {
+    font-size: 2em; /* Adjusted font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.latest-news ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.latest-news li {
+    margin-bottom: 10px; /* Space between list items */
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.latest-news a {
+    text-decoration: none; /* Remove underline from links */
+    color: #FFFFFF; /* Keep text color the same */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.latest-news a:hover {
+    text-decoration: none; /* No underline on hover for news links */
+}
+
+.read-more {
+    margin-left: 10px; /* Space between news text and "Read more" link */
+    font-size: 0.9em; /* Slightly smaller font size for "Read more" */
+    color: #007BFF; /* Link color for "Read more" */
+}
+
+.read-more:hover {
+    color: #0056b3; /* Darker color on hover for "Read more" */
+    text-decoration: underline; /* Underline on hover for "Read more" */
+}
+
+.all-news-link {
+    margin-top: 20px; /* Space above the all news link */
+    font-size: 1em; /* Font size for the all news link */
+    color: #007BFF; /* Link color */
+}
+
+.all-news-link:hover {
+    color: #0056b3; /* Darker color on hover for "See all past and current news" */
+    text-decoration: underline; /* Underline on hover for "See all past and current news" */
+}
+
+.content {
+    flex: 1; /* This will take up the remaining space */
+}
+
+
+/*-------------------About me styling starts here----------------------------------*/
+
+.about-me {
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px;
+    color: #FFFFFF; /* White text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+}
+
+.about-me h2 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.about-me p {
+    max-width: 1200px; /* Limit the width of the text */
+    margin: 0 auto; /* Center the text block */
+}
+
+/* -----------------------------Xperience styling starts here----------------------------------  */
+
+.experience {
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px;
+    color: #FFFFFF; /* White text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+}
+
+.bold-text {
+    color: #FF5733; /* Change to your desired color for bold text */
+}
+
+.experience-title {
+    color: #4CAF50; /* Change to your desired color for "My Experience" */
+}
+
+.experience h2 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.experience ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    max-width: 1200px;
+}
+
+.experience li {
+    font-size: 1.2em; /* Font size for each experience */
+    margin: 10px 0; /* Space between experiences */
+}
+
+.download-button {
+    background-color: transparent; /* Transparent background */
+    border: 2px solid #FFFFFF; /* White border */
+    color: #FFFFFF; /* White text color */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 1em; /* Font size for the button */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Transition effects */
+}
+
+.download-button:hover {
+    background-color: #FFFFFF; /* Change background on hover */
+    color: #000000; /* Change text color on hover */
+}
+
+
+/* ---------------------------Skills styling starts here------------------------------------  */
+ 
+ .skills {
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px;
+    color: #FFFFFF; /* White text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+}
+
+.skills h2 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.skills ul {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto); /* Max 2 rows */
+    gap: 10px; /* Space between items */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.skills li {
+    font-size: 1.2em; /* Font size for each skill */
+    margin: 0; /* Remove margin for list items */
+}
+
+
+
+/* ----------------------------Contact-me styling starts here----------------------------------- */
+.contact-me {
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px;
+    background-color: #282F37; /* Dark Grey background */
+    color: #FFFFFF; /* White text color */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.contact-content {
+    display: flex; /* Use flexbox for layout */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Limit the maximum width */
+}
+
+.form-container {
+    flex: 1; /* Allow the form to take available space */
+    max-width: 400px; /* Limit the width of the form */
+    margin-right: 160px; /* Increased space between form and dummy text */
+}
+
+.dummy-text {
+    flex: 1; /* Allow the dummy text to take available space */
+    max-width: 600px; /* Limit the width of the dummy text */
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+    margin-top: 40px; /* Increased margin to create more space above */
+}
+
+.contact-me h2 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+input, textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for input fields */
+    color: #333; /* Dark text color for input fields */
+}
+
+button {
+    padding: 10px 20px; /* Padding for the button */
+    background-color: #007BFF; /* Button color */
+    color: #FFFFFF; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+/* this is end of contact me area */
+
+
+
