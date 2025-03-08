@@ -1,6 +1,51 @@
-media{
-color: grey;
-background-color: darkgrey;
-align: center;
+@media (max-width: 768px) {
+    .banner {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center text */
+    }
 
+    nav {
+        width: 100%; /* Full width on small screens */
+    }
+
+    .menu {
+        margin-top: 15px; /* Adjust margin for smaller screens */
+    }
+
+    .menu > li {
+        display: block; /* Stack menu items vertically */
+        margin: 10px 0; /* Space between items */
+    }
+
+    .social-media-placeholder {
+        top: 5px; /* Adjust position for smaller screens */
+        right: 10px; /* Adjust position for smaller screens */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%; /* Full width */
+        background-color: #333333; /* Background color for dropdown */
+    }
+
+    .menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+    h1 {
+        font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
+    }
+
+    .cyber-world {
+        font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
+    }
+
+    .download-bbbar {
+        padding: 8px 12px; /* Adjust padding for smaller screens */
+    }
 }
