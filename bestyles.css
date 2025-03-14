@@ -26,7 +26,7 @@ body {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(to right, #333333, #CCCCCC, #333333);
+    background: linear-gradient(to right, #333333, #E5A50A, #333333);
 }
 
 h1 {
