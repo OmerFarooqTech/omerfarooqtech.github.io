@@ -26,7 +26,30 @@
             requestAnimationFrame(animation);
         }
 
-function toggleMenu() {
+		function toggleMenu() {
 			const menu = document.querySelector('.menu');
 			menu.classList.toggle('active');
 		}
+
+
+// Get the button
+const scrollToTopButton = document.querySelector('.scup-top');
+
+// Show the button when the user scrolls down 100px from the top of the document
+window.onscroll = function() {
+    console.log("Scrolling..."); // This will log every time you scroll
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopButton.style.display = "flex"; // Show the button
+    } else {
+        scrollToTopButton.style.display = "none"; // Hide the button
+    }
+};
+
+// Scroll to the top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scroll effect
+    });
+}
+
