@@ -1,49 +1,148 @@
 @media (max-width: 768px) {
-    .banner {
-        flex-direction: column; /* Stack items vertically */
-        text-align: center; /* Center text */
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Full width of the container */
+    padding: 0; /* Ensure no padding */
+    margin: 0; /* Ensure no margin */
+}
+
+
+nav {
+    display: flex; /* Ensure the nav is a flex container */
+    align-items: center; /* Center items vertically */
+    justify-content: flex-start; /* Align items to the left */
+    position: relative; /* Set position to relative for absolute positioning of the menu */
+    flex-direction: row; /* Align items horizontally */
+    align-items: center; /* Vertically center items */
+    justify-content: flex-start;
+    position: relative;
+    padding: 0; /* Remove any default padding */
+    width: auto;
+}
+
+.left-content{
+	display: flex;
+	align-items: center;
+}
+
+h1 {
+    font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
+display: inline-block;
+    margin: 0;
+    }
+    
+.cyber-world {
+     font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
+	display: inline-block;
+     margin: 0;   
+    }
+        h1, .cyber-world {
+        margin-left: 0px; /* leave space for the hamburger button */
+        /* Optionally, ensure they are inline or in a row */
+ 
+        vertical-align: middle;
+        margin: 0 3px; /* Adjust horizontal spacing as desired */
+
+        
     }
 
-    nav {
-        width: 100%; /* Full width on small screens */
+.hamburger {
+    margin-right: auto; /* Push the hamburger button to the left */
+    padding: 10px; /* Add some padding for better clickability */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 30px; /* Adjust size as needed */
+    color: grey; /* Change color to match your design */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    display: inline;
+    position: static;
+    margin: 0; /* Remove extra margins */
+
+    
+}
+
+.menu {
+    display: none; /* Hide menu by default */
+    flex-direction: column; /* Stack items vertically */
+    position: absolute; /* Position the menu absolutely */
+    top: 100%; /* Position it below the nav */
+    right: 0; /* Align it to the left */
+    width: 250px; /* Set a fixed width for the menu */
+    z-index: 1000; /* Ensure it appears above other elements */
+    background-color: #20252c; /* Background color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
+    text-align: left;
+}
+
+.menu.active {
+    display: flex; /* Show menu when active */
+    margin-top: 10px;
+    position: right;
+    padding-left: 0px
+}
+
+.menu > li {
+    display: block; /* Stack menu items vertically */
+    margin: 10px 0; /* Space between items */
+    position: relative; /* Position relative for the pseudo-element */
+    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+    margin: 3px 0;
+}
+
+.social-media-placeholder {
+    top: 5px; /* Adjust position for smaller screens */
+    right: 10px; /* Adjust position for smaller screens */
+    display: none;
     }
 
-    .menu {
-        margin-top: 15px; /* Adjust margin for smaller screens */
+    /* ----------------------new addition starts ------------------------ */
+
+
+    
+.menu .mobile-social,
+.menu .mobile-download {
+        display: block;  /* Make sure they appear as block elements in the menu */
+        margin: 10px 0;  /* spacing to separate from standard menu items */
+        text-align: center;
+    }
+    
+    /* ----------------------new addition ends------------------------ */
+    
+    /* ----------------------scroll home button starts here------------------------ */
+.scup-top {
+    position: fixed; /* Fixed position to stay in the same place */
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    width: 50px; /* Width of the button */
+    height: 50px; /* Height of the button */
+    border-radius: 50%; /* Make it round */
+    background-color: #007bff; /* Background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    font-size: 24px; /* Font size for the arrow */
+    display: none; /* Hidden by default */
+    align-items: center; /* Center content */
+    justify-content: center; /* Center content */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    background-color: rgba(0, 123, 255, 0.4); /* Background color with 40% transparency */
+}
+
+.scup-top:hover {
+    background-color: rgba(0, 86, 179, 0.4); /* Darker shade with 40% transparency on hover */
+}
+
+	/* ----------------------scroll home button ends------------------------ */
+/* Show the button only on mobile screens */
+
+    .scroll-to-top {
+        display: flex; /* Show the button */
     }
 
-    .menu > li {
-        display: block; /* Stack menu items vertically */
-        margin: 10px 0; /* Space between items */
-    }
-
-    .social-media-placeholder {
-        top: 5px; /* Adjust position for smaller screens */
-        right: 10px; /* Adjust position for smaller screens */
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger on small screens */
-    }
-
-    .menu {
-        display: none; /* Hide menu by default */
-        flex-direction: column; /* Stack items vertically */
-        width: 100%; /* Full width */
-        background-color: #333333; /* Background color for dropdown */
-    }
-
-    .menu.active {
-        display: flex; /* Show menu when active */
-    }
-
-    h1 {
-        font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
-    }
-
-    .cyber-world {
-        font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
-    }
 
     .download-bbbar {
         padding: 8px 12px; /* Adjust padding for smaller screens */
