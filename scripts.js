@@ -1,55 +1,51 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
 
-        // Function to smoothly scroll to a specific element
-        function smoothScroll(target, duration) {
-            const targetElement = document.querySelector(target);
-            if (!targetElement) return; // Exit if the target element doesn't exist
+    // Toggle the menu when the hamburger button is clicked
+    hamburger.addEventListener('click', function() {
+        menu.classList.toggle('active'); // Toggle the 'active' class on the menu
+    });
 
-            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-            const startPosition = window.scrollY;
-            const distance = targetPosition - startPosition;
-            let startTime = null;
+    // Function to smoothly scroll to a specific element
+    function smoothScroll(target, duration) {
+        const targetElement = document.querySelector(target);
+        if (!targetElement) return; // Exit if the target element doesn't exist
 
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const progress = Math.min(timeElapsed / duration, 1); // Ensure progress does not exceed 1
-                const easing = easeInOutQuad(progress); // Easing function
-                window.scrollTo(0, startPosition + distance * easing);
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const startPosition = window.scrollY;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
 
-                if (progress < 1) requestAnimationFrame(animation);
-            }
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1); // Ensure progress does not exceed 1
+            const easing = easeInOutQuad(progress); // Easing function
+            window.scrollTo(0, startPosition + distance * easing);
 
-            function easeInOutQuad(t) {
-                return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // Easing function for smooth effect
-            }
-
-            requestAnimationFrame(animation);
+            if (progress < 1) requestAnimationFrame(animation);
         }
 
-		function toggleMenu() {
-			const menu = document.querySelector('.menu');
-			menu.classList.toggle('active');
-		}
+        function easeInOutQuad(t) {
+            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // Easing function for smooth effect
+        }
 
-
-// Get the button
-const scrollToTopButton = document.querySelector('.scup-top');
-
-// Show the button when the user scrolls down 100px from the top of the document
-window.onscroll = function() {
-    console.log("Scrolling..."); // This will log every time you scroll
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollToTopButton.style.display = "flex"; // Show the button
-    } else {
-        scrollToTopButton.style.display = "none"; // Hide the button
+        requestAnimationFrame(animation);
     }
-};
 
-// Scroll to the top function
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Smooth scroll effect
+    // Intersection Observer for slide-up effect
+    const cards = document.querySelectorAll('.slide-up');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once it becomes visible
+            }
+        });
     });
-}
 
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+});
