@@ -1,354 +1,193 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #282F37; /* Dark Grey */
+    background-color: #282F37;
 }
 
-html {
-      scroll-behavior: smooth;
-      }
+
+.banner {
+    text-align: left; /* Center text in the banner */
+    position: relative;
+    height: auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* align items to left */
+    margin: 0;
+    margin-bottom: 5px;
+    z-index: 1;
+    align-items: center;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, #333333, #E5A50A, #333333);
+}
 
 h1 {
-    text-align: center;
-    margin: 20px 0;
-    color: #CCCCCC
+    font-size: clamp(24px, 3vw, 36px);
+    color: #ADD8E6;
+    margin-left: 30px;
 }
 
-.intro-duction{
-    height: 100vh;
-    display: flex; /* Use flexbox to center content */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+.cyber-world {
+    color: #CCCCCC;
+    font-size: clamp(24px, 3vw, 36px);
+    display: flex;
+    align-items: center;
 }
 
-h2{
-    font-size: 2.5em; /* Adjust font size as needed */
+nav {
+    text-align: center; /* Center the menu items */
+    width: 50%; /* Ensure nav takes full width */
 }
 
-.read-intro {
+.menu {
+    display: inline-block;
+    color: #CCCCCC;
+    margin-top: 30px;
+}
+
+.menu > li {
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu > li a {
+    text-decoration: none;
+    color: #CCCCCC;
+}
+
+.menu > li:hover {
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #cccccc;
+    transition: border 0.3s ease;
+    border-radius: 5px;
+    background-color: rgba(204, 204, 204, 0.1);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #333333;
+    border: 1px solid #cccccc;
+    padding: 0px;
+    list-style: none;
+    z-index: 2000;
+    white-space: nowrap;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    text-align: left;
+}
+
+.menu > li:hover .dropdown {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.dropdown li {
+    padding: 5px 10px;
+    color: #cccccc;
+}
+
+.dropdown li:hover {
+    background-color: #444444;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+
+.social-media-placeholder {
+    display: flex;
+    flex-direction: column; /* Stack the button below the icons */
+    align-items: center; /* Align items to the right */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.social-icons {
+    display: flex; /* Keep social icons in a row */
+    justify-content: center;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    margin: 0 1.5px; /* Space between icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.download-bbbar {
+    display: block; /* Make the button a block element */
+    background-color: #385D8D; /* Button background color */
+    color: #FFFFFF; /* Button text color */
+    padding: 5px 10px; /* Padding for the button */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.download-bbbar:hover {
+    background-color: #2c4a6d; /* Darker shade on hover */
+}
+
+
+footer {
     text-align: center;
     padding: 10px;
-    color: #CCCCCC;
-    margin-top: 0px; /* Adjust this value to move the section lower */
-    max-width: 1200px;
-    
+    background: #385D8D;
+    color: #fff;
 }
 
-/*------------------------------Write up section Starts here ------------------------------*/
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0; /* Ensure no extra padding on the container */
-    height: 100vh;
-    align-items: center; /* Center vertically */
-}
-
-.card-fortiles {
-    display: flex; /* Use flexbox for the wrapper */
-    flex-wrap: wrap; /* Allow cards to wrap */
-    justify-content: center; /* Center the cards horizontally */
-    align-items: flex-start; /* Align cards at the top */
-    margin: 0; /* Remove any margin */
-    
-}
-
-.card {
-    background-color: #7e5e60;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    margin: 10px 10px; /* Set vertical margin to 2px and horizontal margin to 10px */
-    width: calc(40% - 20px); /* Two cards per row */
-    padding: 20px;
-    min-height: 50px; /* Optional: Set a minimum height for consistency */
-    
-}
-
-.card-image {
-	width: 100%
-    height: 100%; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the area while maintaining aspect ratio */
-	background-color: #f0f0f0; /* Different background color for the image area */
-    display: flex; /* Use flexbox to center content */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    text-decoration: none;
-}
-
-.card-image img {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-}
-
-.card-content {
-    padding: 20px;
-    flex: 1;
-}
-
-/*------------------------------News styling starts here--------------------------------------*/
-
-.latest-news {
-    height: 100vh; /* Full height of the viewport */
-    padding: 20px;
-    background-color: #282F37; /* Dark Grey background */
-    color: #FFFFFF; /* White text color */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text */
-}
-
-.latest-news h2 {
-    font-size: 2em; /* Adjusted font size for the heading */
-    margin-bottom: 20px; /* Space below the heading */
-}
-
-.latest-news ul {
-    list-style-type: none; /* Remove default list styling */
-    padding: 0; /* Remove default padding */
-}
-
-.latest-news li {
-    margin-bottom: 10px; /* Space between list items */
-    display: flex; /* Use flexbox to align items */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-}
-
-.latest-news a {
-    text-decoration: none; /* Remove underline from links */
-    color: #FFFFFF; /* Keep text color the same */
-    transition: color 0.3s; /* Smooth transition for hover effect */
-}
-
-.latest-news a:hover {
-    text-decoration: none; /* No underline on hover for news links */
-}
-
-.read-more {
-    margin-left: 10px; /* Space between news text and "Read more" link */
-    font-size: 0.9em; /* Slightly smaller font size for "Read more" */
-    color: #007BFF; /* Link color for "Read more" */
-}
-
-.read-more:hover {
-    color: #0056b3; /* Darker color on hover for "Read more" */
-    text-decoration: underline; /* Underline on hover for "Read more" */
-}
-
-.all-news-link {
-    margin-top: 20px; /* Space above the all news link */
-    font-size: 1em; /* Font size for the all news link */
-    color: #007BFF; /* Link color */
-}
-
-.all-news-link:hover {
-    color: #0056b3; /* Darker color on hover for "See all past and current news" */
-    text-decoration: underline; /* Underline on hover for "See all past and current news" */
-}
-
-.content {
-    flex: 1; /* This will take up the remaining space */
-}
-
-
-/*-------------------About me styling starts here----------------------------------*/
-
-.about-me {
-    height: 100vh; /* Full height of the viewport */
-    padding: 20px;
-    color: #FFFFFF; /* White text color */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text */
-}
-
-.about-me h2 {
-    font-size: 2.5em; /* Larger font size for the heading */
-    margin-bottom: 20px; /* Space below the heading */
-}
-
-.about-me p {
-    max-width: 1200px; /* Limit the width of the text */
-    margin: 0 auto; /* Center the text block */
-}
-
-/* -----------------------------Xperience styling starts here----------------------------------  */
-
-.experience {
-    height: 100vh; /* Full height of the viewport */
-    padding: 20px;
-    color: #FFFFFF; /* White text color */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text */
-}
-
-.bold-text {
-    color: #FF5733; /* Change to your desired color for bold text */
-}
-
-.experience-title {
-    color: #4CAF50; /* Change to your desired color for "My Experience" */
-}
-
-.experience h2 {
-    font-size: 2.5em; /* Larger font size for the heading */
-    margin-bottom: 20px; /* Space below the heading */
-}
-
-.experience ul {
-    list-style-type: none; /* Remove default list styling */
-    padding: 0; /* Remove padding */
-    max-width: 1200px;
-}
-
-.experience li {
-    font-size: 1.2em; /* Font size for each experience */
-    margin: 10px 0; /* Space between experiences */
-}
-
-.download-button {
-    background-color: transparent; /* Transparent background */
-    border: 2px solid #FFFFFF; /* White border */
-    color: #FFFFFF; /* White text color */
-    padding: 10px 20px; /* Padding for the button */
-    font-size: 1em; /* Font size for the button */
-    text-decoration: none; /* Remove underline from link */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, color 0.3s; /* Transition effects */
-}
-
-.download-button:hover {
-    background-color: #FFFFFF; /* Change background on hover */
-    color: #000000; /* Change text color on hover */
-}
-
-
-/* ---------------------------Skills styling starts here------------------------------------  */
- 
- .skills {
-    height: 100vh; /* Full height of the viewport */
-    padding: 20px;
-    color: #FFFFFF; /* White text color */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text */
-}
-
-.skills h2 {
-    font-size: 2.5em; /* Larger font size for the heading */
-    margin-bottom: 20px; /* Space below the heading */
-}
-
-.skills ul {
-    display: grid; /* Use grid layout */
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    grid-template-rows: repeat(2, auto); /* Max 2 rows */
-    gap: 10px; /* Space between items */
-    list-style-type: none; /* Remove default list styling */
-    padding: 0; /* Remove padding */
-}
-
-.skills li {
-    font-size: 1.2em; /* Font size for each skill */
-    margin: 0; /* Remove margin for list items */
-}
-
-
-
-/* ----------------------------Contact-me styling starts here----------------------------------- */
-.contact-me {
-    height: 100vh; /* Full height of the viewport */
-    padding: 20px;
-    background-color: #282F37; /* Dark Grey background */
-    color: #FFFFFF; /* White text color */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-}
-
-.contact-content {
+.floating-menu {
+    position: fixed; /* Fixed position to float on the screen */
+    bottom: 20px;
+    right: 20px; /* Distance from the right */
+    background-color: rgba(40, 47, 62, 0.9); /* Completed background color */
+    border: 2px solid #fff; /* White border around the menu */
+    border-radius: 5px; /* Optional: rounded corners */
+    padding: 10px; /* Space inside the menu */
     display: flex; /* Use flexbox for layout */
-    width: 100%; /* Full width */
-    max-width: 1200px; /* Limit the maximum width */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
 }
 
-.form-container {
-    flex: 1; /* Allow the form to take available space */
-    max-width: 400px; /* Limit the width of the form */
-    margin-right: 160px; /* Increased space between form and dummy text */
+.floating-menu a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 0; /* Further reduced space between items */
+    padding: 8px 12px; /* Padding for clickable area */
+    width: 100%; /* Make links take full width of the menu */
+    display: block; /* Make links block elements */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-.dummy-text {
-    flex: 1; /* Allow the dummy text to take available space */
-    max-width: 600px; /* Limit the width of the dummy text */
-    display: flex; /* Use flexbox for vertical alignment */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: flex-start; /* Align items to the start (left) */
-    margin-top: 40px; /* Increased margin to create more space above */
+.floating-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
 }
 
-.contact-me h2 {
-    font-size: 2.5em; /* Larger font size for the heading */
-    margin-bottom: 20px; /* Space below the heading */
-}
-
-.form-group {
-    margin-bottom: 15px; /* Space between form fields */
-}
-
-label {
-    display: block; /* Make labels block elements */
-    margin-bottom: 5px; /* Space below labels */
-}
-
-input, textarea {
-    width: 100%; /* Full width */
-    padding: 10px; /* Padding inside input fields */
-    border: 1px solid #ccc; /* Border for input fields */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background for input fields */
-    color: #333; /* Dark text color for input fields */
-}
-
-button {
-    padding: 10px 20px; /* Padding for the button */
-    background-color: #007BFF; /* Button color */
-    color: #FFFFFF; /* White text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-button:hover {
-    background-color: #0056b3; /* Darker button color on hover */
-}
-
-/* this is end of contact me area */
-
-
-/* Animation for sliding up */
-.slide-up {
-    opacity: 0; /* Start hidden */
-    transform: translateY(20px); /* Start slightly below */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transition for smooth effect */
-}
-
-.slide-up.visible {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Move to original position */
+.hamburger {
+    display: none; /* Hide by default */
 }
