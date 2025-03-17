@@ -1,16 +1,7 @@
 @media (max-width: 768px) {
-
-.banner {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
-    text-align: left; /* Align text to the left */
-    width: 100%; /* Full width of the container */
-    padding: 0; /* Ensure no padding */
-    margin: 0; /* Ensure no margin */
-}
-
+    .banner {
+        text-align: center; /* Center text */
+        }
 
 nav {
     display: flex; /* Ensure the nav is a flex container */
@@ -22,47 +13,6 @@ nav {
     justify-content: flex-start;
     position: relative;
     padding: 0; /* Remove any default padding */
-    width: auto;
-}
-
-.left-content{
-	display: flex;
-	align-items: center;
-}
-
-h1 {
-    font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
-display: inline-block;
-    margin: 0;
-    }
-    
-.cyber-world {
-     font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
-	display: inline-block;
-     margin: 0;   
-    }
-        h1, .cyber-world {
-        margin-left: 0px; /* leave space for the hamburger button */
-        /* Optionally, ensure they are inline or in a row */
- 
-        vertical-align: middle;
-        margin: 0 3px; /* Adjust horizontal spacing as desired */
-
-        
-    }
-
-.hamburger {
-    margin-right: auto; /* Push the hamburger button to the left */
-    padding: 10px; /* Add some padding for better clickability */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    font-size: 30px; /* Adjust size as needed */
-    color: grey; /* Change color to match your design */
-    transition: background-color 0.3s; /* Smooth transition for background color */
-    display: inline;
-    position: static;
-    margin: 0; /* Remove extra margins */
-
-    
 }
 
 .menu {
@@ -70,81 +20,144 @@ display: inline-block;
     flex-direction: column; /* Stack items vertically */
     position: absolute; /* Position the menu absolutely */
     top: 100%; /* Position it below the nav */
-    right: 0; /* Align it to the left */
-    width: 250px; /* Set a fixed width for the menu */
-    z-index: 1000; /* Ensure it appears above other elements */
-    background-color: #20252c; /* Background color */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
-    text-align: left;
+    left: 0; /* Align it to the left */
+    width: 100%; /* Full width */
 }
 
 .menu.active {
     display: flex; /* Show menu when active */
     margin-top: 10px;
-    position: right;
-    padding-left: 0px
+	background-color: #282F37;
 }
 
-.menu > li {
-    display: block; /* Stack menu items vertically */
-    margin: 10px 0; /* Space between items */
-    position: relative; /* Position relative for the pseudo-element */
-    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
-    margin: 3px 0;
-}
 
-.social-media-placeholder {
-    top: 5px; /* Adjust position for smaller screens */
-    right: 10px; /* Adjust position for smaller screens */
-    display: none;
+    .menu > li {
+        display: block; /* Stack menu items vertically */
+        margin: 10px 0; /* Space between items */
     }
 
-    /* ----------------------new addition starts ------------------------ */
+    .social-media-placeholder {
+        top: 5px; /* Adjust position for smaller screens */
+        right: 10px; /* Adjust position for smaller screens */
+        display: none;
+    }
 
+.hamburger {
+    margin-right: auto; /* Push the hamburger button to the left */
+    padding: 10px; /* Add some padding for better clickability */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 30px; /* Adjust size as needed */
+   /* background: none; /* Remove default background */
+   /* border: none; /* Remove default border */
+    color: white; /* Change color to match your design */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    display: block;
+    position: static;
+      margin: 0; /* Remove extra margins */
+    
+}
+
+.hamburger:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
+}
+
+    .menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%; /* Full width */
+        background-color: #333333; /* Background color for dropdown */
+    }
+
+    .menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+    h1 {
+        font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
+    }
+    /* ----------------------new addition starts ------------------------ */
+        h1, .cyber-world {
+        margin-left: 50px; /* leave space for the hamburger button */
+        /* Optionally, ensure they are inline or in a row */
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px; /* Adjust horizontal spacing as desired */
+    }
 
     
-.menu .mobile-social,
-.menu .mobile-download {
+        .menu .mobile-social,
+    .menu .mobile-download {
         display: block;  /* Make sure they appear as block elements in the menu */
         margin: 10px 0;  /* spacing to separate from standard menu items */
         text-align: center;
     }
     
+
     /* ----------------------new addition ends------------------------ */
     
-    /* ----------------------scroll home button starts here------------------------ */
-.scup-top {
-    position: fixed; /* Fixed position to stay in the same place */
-    bottom: 20px; /* Distance from the bottom */
-    left: 20px; /* Distance from the left */
-    width: 50px; /* Width of the button */
-    height: 50px; /* Height of the button */
-    border-radius: 50%; /* Make it round */
-    background-color: #007bff; /* Background color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    font-size: 24px; /* Font size for the arrow */
-    display: none; /* Hidden by default */
-    align-items: center; /* Center content */
-    justify-content: center; /* Center content */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition */
-    background-color: rgba(0, 123, 255, 0.4); /* Background color with 40% transparency */
-}
-
-.scup-top:hover {
-    background-color: rgba(0, 86, 179, 0.4); /* Darker shade with 40% transparency on hover */
-}
-
-	/* ----------------------scroll home button ends------------------------ */
-/* Show the button only on mobile screens */
-
-    .scroll-to-top {
-        display: flex; /* Show the button */
+    .cyber-world {
+        font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
     }
-
 
     .download-bbbar {
         padding: 8px 12px; /* Adjust padding for smaller screens */
     }
+    
+     /*   .card-fortiles {
+        justify-content: flex-start; /* Align cards to the left */
+     /*   padding-right: 10px; /* Add some padding on the right side */
+    /*} */
+    .card-fortiles {
+    display: flex; /* Ensure flexbox is applied */
+    justify-content: flex-start; /* Align cards to the left */
+    padding: 0; /* Add padding on the left and right */
+    margin: 0;
+    margin-left: 87px;
 }
+    /*    .card {
+        width: 80%; /* Full width for small screens */
+      /*  flex-direction: column; /* Stack content vertically */
+     /*   padding: 10px; /* Reduce padding for smaller screens */
+     /*   height: 150px;
+        margin: 10px 0px; /* Add a little space on the right */
+       /* width: calc(100% - 10px); /* Full width minus margin for alignment */
+       /* }  */
+
+.card {
+    width: calc(80% - 20px); /* Adjust width to account for margins */
+    flex-direction: column; /* Stack content vertically */
+    padding: 10px; /* Reduce padding for smaller screens */
+    height: 150px; /* Set desired height */
+    margin: 10px 0; /* Use uniform margin */
+    box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+    .card-image {
+        width: auto; /* Image takes full width */
+        background-color: white;
+    }
+
+    .card-content {
+        padding: 8px; /* Reduce padding in card content */
+        background-color: #7e5e60;
+        overflow: hidden; /* Ensure content does not overflow */
+        flex: 0 1 auto; /* Allow content to adjust based on available space */
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+        .card-content h2, .card-content p {
+        margin: 0;
+        overflow: hidden; /* Prevent overflow */
+        white-space: nowrap; /* Prevent text from wrapping */
+        text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+    }
+     {
+    box-sizing: border-box; /* Apply box-sizing globally */
+	}
+}   
