@@ -1,9 +1,9 @@
 @media (max-width: 768px) {
 
-
+/*
 * {
     border: 1px solid red; /* Temporary border for debugging */
-}
+
 
 body{
 	overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -136,24 +136,32 @@ nav {
        /* }  */
 
 .card {
+    position: relative; /* Allow absolute positioning of children */
     width: calc(80% - 30px); /* Adjust width to account for margins */
     flex-direction: column; /* Stack content vertically */
     padding: 10px; /* Reduce padding for smaller screens */
     height: 150px; /* Set desired height */
     margin: 10px 0; /* Use uniform margin */
-    box-sizing: border-box; /* Include padding and border in width/height */
+
+    overflow: hidden; /* Ensure content does not overflow */
 }
 
     .card-image {
-        width: auto; /* Image takes full width */
-        background-color: white;
+    position: absolute; /* Position the image absolutely */
+    top: 0; /* Align to the top of the card */
+    left: 0; /* Align to the left of the card */
+    width: 100%; /* Full width of the card */
+    height: 100%; /* Full height of the card */
+    object-fit: cover; /* Cover the card area without distortion */
+    z-index: 1; /* Set a lower z-index to place it behind text */
     }
 
     .card-content {
-        padding: 8px; /* Reduce padding in card content */
-        background-color: #7e5e60;
-        overflow: hidden; /* Ensure content does not overflow */
-        flex: 0 1 auto; /* Allow content to adjust based on available space */
+    position: relative; /* Position content relative to the card */
+    padding: 8px; /* Reduce padding in card content */
+    background-color: rgba(126, 94, 96, 0.8); /* Semi-transparent background for readability */
+    z-index: 2; /* Set a higher z-index to place it above the image */
+    overflow: hidden; /* Ensure content does not overflow */
     }
 
     h1 {
@@ -172,5 +180,4 @@ nav {
      {
     box-sizing: border-box; /* Apply box-sizing globally */
 }
- }   
-}
+ }
