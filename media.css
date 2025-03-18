@@ -64,7 +64,7 @@ nav {
     transition: background-color 0.3s; /* Smooth transition for background color */
     display: block;
     position: static;
-      margin: 0; /* Remove extra margins */
+    margin: 0; /* Remove extra margins */
     
 }
 
@@ -96,7 +96,7 @@ nav {
     }
 
     
-        .menu .mobile-social,
+    .menu .mobile-social,
     .menu .mobile-download {
         display: block;  /* Make sure they appear as block elements in the menu */
         margin: 10px 0;  /* spacing to separate from standard menu items */
@@ -106,26 +106,26 @@ nav {
 
     /* ----------------------new addition ends------------------------ */
     
-    .cyber-world {
-        font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
+.cyber-world {
+	font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
     }
 
-    .download-bbbar {
-        padding: 8px 12px; /* Adjust padding for smaller screens */
+.download-bbbar {
+    padding: 8px 12px; /* Adjust padding for smaller screens */
     }
     
      /*   .card-fortiles {
         justify-content: flex-start; /* Align cards to the left */
      /*   padding-right: 10px; /* Add some padding on the right side */
     /*} */
-    .card-fortiles {
+.card-fortiles {
     display: flex; /* Ensure flexbox is applied */
     justify-content: flex-start; /* Align cards to the left */
     padding: 0; /* Add padding on the left and right */
     margin: 0;
     margin-left: 0;
     max-width: 100%;
-}
+	}
     /*    .card {
         width: 80%; /* Full width for small screens */
       /*  flex-direction: column; /* Stack content vertically */
@@ -142,11 +142,10 @@ nav {
     padding: 10px; /* Reduce padding for smaller screens */
     height: 150px; /* Set desired height */
     margin: 10px 0; /* Use uniform margin */
-
     overflow: hidden; /* Ensure content does not overflow */
-}
+	}
 
-    .card-image {
+.card-image {
     position: absolute; /* Position the image absolutely */
     top: 0; /* Align to the top of the card */
     left: 0; /* Align to the left of the card */
@@ -156,7 +155,7 @@ nav {
     z-index: 1; /* Set a lower z-index to place it behind text */
     }
 
-    .card-content {
+.card-content {
     position: relative; /* Position content relative to the card */
     padding: 8px; /* Reduce padding in card content */
     background-color: rgba(126, 94, 96, 0.8); /* Semi-transparent background for readability */
@@ -168,16 +167,46 @@ nav {
         font-size: 1.4em;
     }
 
-    p {
+/*    p {
         font-size: 0.8em;
     }
-        .card-content h2, .card-content p {
-        margin: 0;
-        overflow: hidden; /* Prevent overflow */
-        white-space: nowrap; /* Prevent text from wrapping */
-        text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+*/
+.card-content h2,
+.card-content p {
+     margin: 0;
+	 overflow: hidden; /* Prevent overflow */
+     white-space: nowrap; /* Prevent text from wrapping */
+     text-overflow: ellipsis; /* Show ellipsis for overflowed text */
     }
-     {
-    box-sizing: border-box; /* Apply box-sizing globally */
+
+.contact-content {
+      display: flex;
+      flex-direction: column; /* Stack elements vertically */
+    }
+
+.dummy-text,
+.form-container {
+      width: 100%; /* Make both sections full width */
+      margin-bottom: 20px; /* Add some space between the rows */
+    }
+
+.dummy-text {
+      order: 1; /* Dummy text first */
+    }
+
+.form-container {
+      order: 2; /* Form second */
+    }
+
+    /* Reduce the width of input fields and textarea */
+.form-group input,
+.form-group textarea {
+      width: 80%; /* Set to 80% of the parent container */
+      max-width: 300px; /* Optional: Set a maximum width */
+      margin: 0 auto; /* Center the input fields */
+    }
 }
- }
+{
+box-sizing: border-box; /* Apply box-sizing globally */
+}
+
