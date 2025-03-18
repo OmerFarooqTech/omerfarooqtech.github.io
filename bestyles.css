@@ -3,10 +3,9 @@ body {
     background-color: #282F37;
 }
 
-
 .banner {
     text-align: left; /* Center text in the banner */
-    position: relative;
+    position: fixed;
     height: auto;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -14,8 +13,10 @@ body {
     justify-content: flex-start; /* align items to left */
     margin: 0;
     margin-bottom: 5px;
-    z-index: 1;
+    z-index: 1000;
     align-items: center;
+    width: 100%;
+    background-color: #282F37;
 }
 
 .banner::after {
@@ -53,7 +54,7 @@ nav {
 }
 
 .menu > li {
-    display: inline-block;
+    display: inline;
     margin: 0 15px;
     position: relative;
     cursor: pointer;
@@ -109,7 +110,7 @@ nav {
     display: flex;
     flex-direction: column; /* Stack the button below the icons */
     align-items: center; /* Align items to the right */
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 20px;
     z-index: 1000;
