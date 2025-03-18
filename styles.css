@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #282F37; /* Dark Grey */
+    font-size: 0.875em; /* Font size for each experience */
 }
 
 html {
@@ -12,17 +13,17 @@ h1 {
     text-align: center;
     margin: 20px 0;
     color: #CCCCCC
-}
+	}
+
+h2 {
+    font-size: 2.5em; /* Larger font size for the heading */
+	}
 
 .intro-duction{
     height: 100vh;
     display: flex; /* Use flexbox to center content */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-}
-
-h2{
-    font-size: 2.5em; /* Adjust font size as needed */
 }
 
 .read-intro {
@@ -32,7 +33,7 @@ h2{
     margin-top: 0px; /* Adjust this value to move the section lower */
     max-width: 1200px;
     
-}
+	}
 
 /*------------------------------Write up section Starts here ------------------------------*/
 
@@ -104,7 +105,7 @@ h2{
 }
 
 .latest-news h2 {
-    font-size: 2em; /* Adjusted font size for the heading */
+
     margin-bottom: 20px; /* Space below the heading */
 }
 
@@ -143,7 +144,6 @@ h2{
 
 .all-news-link {
     margin-top: 20px; /* Space above the all news link */
-    font-size: 1em; /* Font size for the all news link */
     color: #007BFF; /* Link color */
 }
 
@@ -171,7 +171,6 @@ h2{
 }
 
 .about-me h2 {
-    font-size: 2.5em; /* Larger font size for the heading */
     margin-bottom: 20px; /* Space below the heading */
 }
 
@@ -202,7 +201,6 @@ h2{
 }
 
 .experience h2 {
-    font-size: 2.5em; /* Larger font size for the heading */
     margin-bottom: 20px; /* Space below the heading */
 }
 
@@ -213,7 +211,6 @@ h2{
 }
 
 .experience li {
-    font-size: 1.2em; /* Font size for each experience */
     margin: 10px 0; /* Space between experiences */
 }
 
@@ -249,7 +246,6 @@ h2{
 }
 
 .skills h2 {
-    font-size: 2.5em; /* Larger font size for the heading */
     margin-bottom: 20px; /* Space below the heading */
 }
 
@@ -303,7 +299,6 @@ h2{
 }
 
 .contact-me h2 {
-    font-size: 2.5em; /* Larger font size for the heading */
     margin-bottom: 20px; /* Space below the heading */
 }
 
@@ -336,7 +331,7 @@ button {
 
 button:hover {
     background-color: #0056b3; /* Darker button color on hover */
-}
+	}
 
 /* this is end of contact me area */
 
