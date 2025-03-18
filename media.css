@@ -137,7 +137,7 @@ nav {
 
 .card {
     position: relative; /* Allow absolute positioning of children */
-    width: calc(80% - 30px); /* Adjust width to account for margins */
+    width: calc(92% - 30px); /* Adjust width to account for margins */
     flex-direction: column; /* Stack content vertically */
     padding: 10px; /* Reduce padding for smaller screens */
     height: 150px; /* Set desired height */
