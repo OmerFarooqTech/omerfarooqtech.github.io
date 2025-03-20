@@ -192,3 +192,10 @@ footer {
 .hamburger {
     display: none; /* Hide by default */
 }
+
+
+@media (min-width: 768px) { /* Adjust the min-width as needed for your design */
+    .cross-button {
+        display: none !important; /* Hide the close button */
+    }
+}
