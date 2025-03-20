@@ -194,7 +194,7 @@ footer {
 }
 
 
-@media (min-width: 768px) { /* Adjust the min-width as needed for your design */
+@media (min-width: 560px) { /* Adjust the min-width as needed for your design */
     .cross-button {
         display: none !important; /* Hide the close button */
     }
