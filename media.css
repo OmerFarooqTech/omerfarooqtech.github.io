@@ -78,7 +78,7 @@ nav {
 	height: calc(100vh - 107px); /* Adjust height to fill the viewport minus the nav height */
     max-width: 100%; /* Set the desired width for the active menu */
     overflow-y: auto; /* Allow scrolling if content exceeds the height */
-    width: 450px; /* Set the desired width for the active menu */
+    width: 480px; /* Set the desired width for the active menu */
 }
 
 .cross-button {
