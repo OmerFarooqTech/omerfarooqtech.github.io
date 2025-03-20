@@ -78,7 +78,7 @@ nav {
 	height: calc(100vh - 107px); /* Adjust height to fill the viewport minus the nav height */
     max-width: 100%; /* Set the desired width for the active menu */
     overflow-y: auto; /* Allow scrolling if content exceeds the height */
-    width: 100%; /* Set the desired width for the active menu */
+    width: 450px; /* Set the desired width for the active menu */
 }
 
 .cross-button {
@@ -216,7 +216,7 @@ h1, .cyber-world {
 box-sizing: border-box; /* Apply box-sizing globally */
 }
 
-@media (min-width: 560px) {
+@media (min-width: 768px) {
     .cross-button {
         display: none !important; /* Force hide the cross button */
     }
