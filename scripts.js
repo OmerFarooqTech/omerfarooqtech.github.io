@@ -48,4 +48,19 @@ document.addEventListener('DOMContentLoaded', function() {
     cards.forEach(card => {
         observer.observe(card);
     });
+
+    // Close menu when a menu item is clicked
+    const menuItems = document.querySelectorAll('.menu-item'); // Assuming your menu items have the class 'menu-item'
+    menuItems.forEach(item => {
+        item.addEventListener('click', closeMenu);
+    });
+
+    // Close menu when the user scrolls
+    window.addEventListener('scroll', closeMenu);
 });
+
+// Function to close the menu
+function closeMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.remove('active'); // Remove the active class to hide the menu
+}
