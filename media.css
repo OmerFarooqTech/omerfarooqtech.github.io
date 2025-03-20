@@ -1,13 +1,16 @@
 @media (max-width: 768px) {
 
-/*
-* {
+ *{
     border: 1px solid red; /* Temporary border for debugging */
-
+}
 
 body{
 	overflow-x: hidden; /* Prevent horizontal scrolling */
   }
+
+h1 {
+	font-size: clamp(24px, 3vw, 36px);
+	}
 
 .banner {
 	text-align: center; /* Center text */
@@ -16,12 +19,12 @@ body{
 nav {
     display: flex; /* Ensure the nav is a flex container */
     align-items: center; /* Center items vertically */
-    justify-content: flex-start; /* Align items to the left */
+    justify-content: space-between; /* Align items to the left */
     position: relative; /* Set position to relative for absolute positioning of the menu */
     flex-direction: row; /* Align items horizontally */
     flex-wrap: wrap;
-    align-items: center; /* Vertically center items */
-    justify-content: flex-start;
+    /*align-items: center; /* Vertically center items */
+    /*justify-content: flex-start; */
     position: relative;
     padding: 0; /* Remove any default padding */
 }
@@ -35,14 +38,7 @@ nav {
     width: 100%; /* Full width */
 }
 
-.menu.active {
-    display: flex; /* Show menu when active */
-    margin-top: 10px;
-	background-color: #282F37;
-}
-
-
-    .menu > li {
+.menu > li {
         display: block; /* Stack menu items vertically */
         margin: 10px 0; /* Space between items */
     }
@@ -54,7 +50,7 @@ nav {
     }
 
 .hamburger {
-    margin-right: auto; /* Push the hamburger button to the left */
+   /* margin-right: auto; /* Push the hamburger button to the left */
     padding: 10px; /* Add some padding for better clickability */
     cursor: pointer; /* Change cursor to pointer on hover */
     font-size: 30px; /* Adjust size as needed */
@@ -64,7 +60,8 @@ nav {
     transition: background-color 0.3s; /* Smooth transition for background color */
     display: block;
     position: static;
-    margin: 0; /* Remove extra margins */
+    margin-left: auto; /* Remove extra margins */
+    justify-content: flex-end; /* Align items to the left */
     
 }
 
@@ -72,35 +69,48 @@ nav {
     background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
 }
 
-    .menu {
-        display: none; /* Hide menu by default */
-        flex-direction: column; /* Stack items vertically */
-        width: 100%; /* Full width */
-        background-color: #333333; /* Background color for dropdown */
-    }
+.menu.active {
+    display: flex; /* Show menu when active */
+    margin-top: 7px;
+	background-color: #282F37;
+	text-align: left;
+	padding: 0px 14px;
+	height: calc(100vh - 107px); /* Adjust height to fill the viewport minus the nav height */
+    max-width: 100%; /* Set the desired width for the active menu */
+    overflow-y: auto; /* Allow scrolling if content exceeds the height */
+    width: 450px; /* Set the desired width for the active menu */
+}
 
-    .menu.active {
-        display: flex; /* Show menu when active */
-    }
+.cross-button {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 12px; /* Adjust size as needed */
+    color: white; /* Change color to match your design */
+    position: right; /* Position it absolutely */
+    right: 10px; /* Adjust right position */
+/*    border: none; /* Remove default border */
+	margin: 0;
+    padding: 0; /* Remove padding */
+    z-index: 1; /* Ensure it appears above other elements */
+    width: 15px; /* Set width to auto to prevent it from covering the whole width */
+    height: 15px; /* Set height to auto */
+    outline: none; /* Remove outline if it appears */
+}
 
-    h1 {
-        font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
-    }
     /* ----------------------new addition starts ------------------------ */
-        h1, .cyber-world {
-        margin-left: 50px; /* leave space for the hamburger button */
+h1, .cyber-world {
+    margin-left: 50px; /* leave space for the hamburger button */
         /* Optionally, ensure they are inline or in a row */
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0 10px; /* Adjust horizontal spacing as desired */
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px; /* Adjust horizontal spacing as desired */
     }
 
     
-    .menu .mobile-social,
-    .menu .mobile-download {
-        display: block;  /* Make sure they appear as block elements in the menu */
-        margin: 10px 0;  /* spacing to separate from standard menu items */
-        text-align: center;
+.menu .mobile-social,
+.menu .mobile-download {
+    display: block;  /* Make sure they appear as block elements in the menu */
+    margin: 10px 0;  /* spacing to separate from standard menu items */
+    text-align: center;
     }
     
 
@@ -163,10 +173,6 @@ nav {
     overflow: hidden; /* Ensure content does not overflow */
     }
 
-    h1 {
-        font-size: 1.4em;
-    }
-
 /*    p {
         font-size: 0.8em;
     }
@@ -210,3 +216,8 @@ nav {
 box-sizing: border-box; /* Apply box-sizing globally */
 }
 
+@media (min-width: 768px) {
+    .cross-button {
+        display: none !important; /* Force hide the cross button */
+    }
+}
