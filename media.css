@@ -1,32 +1,30 @@
 @media (max-width: 768px) {
 
- *{
+/* *{
     border: 1px solid red; /* Temporary border for debugging */
-}
+} */
 
 body{
 	overflow-x: hidden; /* Prevent horizontal scrolling */
-  }
+    }
 
-h1 {
+h3  {
 	font-size: clamp(24px, 3vw, 36px);
 	}
+
+.cyber-world {
+	font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
+    }
 
 .banner {
 	text-align: center; /* Center text */
     }
 
 nav {
-    display: flex; /* Ensure the nav is a flex container */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Align items to the left */
     position: relative; /* Set position to relative for absolute positioning of the menu */
-    flex-direction: row; /* Align items horizontally */
     flex-wrap: wrap;
-    /*align-items: center; /* Vertically center items */
-    /*justify-content: flex-start; */
-    position: relative;
     padding: 0; /* Remove any default padding */
+    margin-left: auto;
 }
 
 .menu {
@@ -35,100 +33,215 @@ nav {
     position: absolute; /* Position the menu absolutely */
     top: 100%; /* Position it below the nav */
     left: 0; /* Align it to the left */
-    width: 100%; /* Full width */
+    text-align: left; /* Ensure text is aligned to the left */
 }
 
 .menu > li {
-        display: block; /* Stack menu items vertically */
-        margin: 10px 0; /* Space between items */
-    }
-
-    .social-media-placeholder {
-        top: 5px; /* Adjust position for smaller screens */
-        right: 10px; /* Adjust position for smaller screens */
-        display: none;
+    display: block; /* Stack menu items vertically */
+    margin: 10px 0; /* Space between items */
+    width: 100%;
     }
 
 .hamburger {
-   /* margin-right: auto; /* Push the hamburger button to the left */
     padding: 10px; /* Add some padding for better clickability */
+    margin-right: 10px;
     cursor: pointer; /* Change cursor to pointer on hover */
     font-size: 30px; /* Adjust size as needed */
-   /* background: none; /* Remove default background */
-   /* border: none; /* Remove default border */
     color: white; /* Change color to match your design */
     transition: background-color 0.3s; /* Smooth transition for background color */
     display: block;
     position: static;
     margin-left: auto; /* Remove extra margins */
-    justify-content: flex-end; /* Align items to the left */
-    
 }
 
 .hamburger:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
 }
 
+.hamburger.x {
+    /* Styles for the "X" state */
+    position: relative; /* Position relative for absolute children */
+}
+
+.hamburger.x:before,
+.hamburger.x:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px; /* Thickness of the lines */
+    background-color: white; /* Color of the lines */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.hamburger.x:before {
+    top: 50%; /* Center vertically */
+    transform: rotate(45deg); /* Rotate to form one line of the "X" */
+}
+
+.hamburger.x:after {
+    top: 50%; /* Center vertically */
+    transform: rotate(-45deg); /* Rotate to form the other line of the "X" */
+}
+
 .menu.active {
     display: flex; /* Show menu when active */
-    margin-top: 7px;
-	background-color: #282F37;
-	text-align: left;
-	padding: 0px 14px;
-	height: calc(100vh - 107px); /* Adjust height to fill the viewport minus the nav height */
-    max-width: 100%; /* Set the desired width for the active menu */
+    position: fixed; /* Make the menu absolute */
+    top: 70px; /* Adjust this value based on your layout */
+	left: 50px;
+    background-color: #192841;
+    text-align: left;
+    padding: 0px 14px;
+    height: calc(100vh - 107px); /* Adjust height to fill the viewport minus the nav height */
     overflow-y: auto; /* Allow scrolling if content exceeds the height */
-    width: 480px; /* Set the desired width for the active menu */
+    width: 85%; /* Set the desired width for the active menu */
+    z-index: 1000; /* Ensure it appears above other elements */
+    text-align: center;
+    border-left: 1px solid #B0B3B8;
 }
+
+.menu.active>li{
+	text-align: left;
+	}
+	
+.so-bbbar {
+	margin: 0;
+	width: auto;
+	margin-right: auto;
+	}
 
 .cross-button {
+	padding: 10px; /* Add some padding for better clickability */
+    margin-right: 10px;
     cursor: pointer; /* Change cursor to pointer on hover */
-    font-size: 12px; /* Adjust size as needed */
+    font-size: 30px; /* Adjust size as needed */
     color: white; /* Change color to match your design */
-    position: right; /* Position it absolutely */
-    right: 10px; /* Adjust right position */
-/*    border: none; /* Remove default border */
-	margin: 0;
-    padding: 0; /* Remove padding */
-    z-index: 1; /* Ensure it appears above other elements */
-    width: 15px; /* Set width to auto to prevent it from covering the whole width */
-    height: 15px; /* Set height to auto */
-    outline: none; /* Remove outline if it appears */
-}
-
-    /* ----------------------new addition starts ------------------------ */
-h1, .cyber-world {
-    margin-left: 50px; /* leave space for the hamburger button */
-        /* Optionally, ensure they are inline or in a row */
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 10px; /* Adjust horizontal spacing as desired */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    display: block;
+    position: static;
+    margin-left: auto; /* Remove extra margins */
     }
 
-    
+    /* ----------------------new addition starts ------------------------ */
+
+.pie {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 10px; /* Adjust horizontal spacing as desired */
+    width: 13%;
+    text-decoration: none;
+    }
+
+.cyber-world {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 0px; /* Adjust horizontal spacing as desired */
+    width: 40%;
+    }
+ 
 .menu .mobile-social,
 .menu .mobile-download {
     display: block;  /* Make sure they appear as block elements in the menu */
     margin: 10px 0;  /* spacing to separate from standard menu items */
     text-align: center;
     }
+   
+    .mobile-social {
+        height: 36px; /* Set the desired height */
+        display: flex; /* Ensure it is a flex container */
+        align-items: center; /* Center items vertically */
+        justify-content: flex-end; /* Align items to the right */
+        margin: 10px 0; /* Adjust margin as needed */
+        width: 100%;
+    } 
     
-
-    /* ----------------------new addition ends------------------------ */
-    
-.cyber-world {
-	font-size: clamp(20px, 5vw, 28px); /* Smaller font size */
-    }
-
 .download-bbbar {
     padding: 8px 12px; /* Adjust padding for smaller screens */
     }
+
+    /* ----------------------experiance section starts here------------------------ */
     
-     /*   .card-fortiles {
-        justify-content: flex-start; /* Align cards to the left */
-     /*   padding-right: 10px; /* Add some padding on the right side */
-    /*} */
+.experience-container {
+    position: relative;
+    height: 95vh; /* Full height of the viewport */
+    width: 100vw;
+}
+
+.experience {
+
+    max-width: 600px; /* Optional: Limit the width for better readability on smaller screens */
+}
+
+/* ----------------------experiance section ends here------------------------ */
+
+/* --------------------------- badges slides -----------------------  */
+
+.skills {
+        height: 95vh;
+        width: 100vw; /* Full width of the viewport */
+       /* background: #282F37; */
+        padding: 0;
+        }
+
+    .slides {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-height: 28vh;
+        
+    }
+
+    .slide {
+        position: absolute; /* Position slides absolutely */
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        display: flex; /* Use flexbox for centering */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        background-color: #282F37; /* Background color for visibility */
+        opacity: 0; /* Start hidden */
+        transition: opacity 0.5s ease; /* Smooth transition */
+        visibility: hidden; /* Hide the slide */
+    }
+
+    .slide.active {
+        opacity: 1; /* Fully visible */
+        visibility: visible; /* Make it visible */
+    }
+
+
+.skl-btt {
+    display: flex; /* Use flexbox for button alignment */
+ 
+}
+
+/* Button styles for responsive design */
+    .prev, .next {
+        position: relative;
+        background-color: #007BFF; /* Button background color */
+        color: white; /* Button text color */
+        border: none; /* Remove border */
+        padding: 8px 12px; /* Adjust padding for a sleeker look */
+        cursor: pointer; /* Change cursor on hover */
+        border-radius: 20px; /* Make the buttons more rounded */
+        font-size: 14px; /* Adjust font size */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+        display: block;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+
+    .badgr-badge {
+        width: 100%; /* Set max width for badges */
+        margin: 0; /* Center the badge */
+        padding: 0 20px; /* Add left and right padding */
+    }
+
+/* --------------------------- end of badges slides ------------------------- */
 .card-fortiles {
+	height: 95vh;
     display: flex; /* Ensure flexbox is applied */
     justify-content: flex-start; /* Align cards to the left */
     padding: 0; /* Add padding on the left and right */
@@ -136,22 +249,14 @@ h1, .cyber-world {
     margin-left: 0;
     max-width: 100%;
 	}
-    /*    .card {
-        width: 80%; /* Full width for small screens */
-      /*  flex-direction: column; /* Stack content vertically */
-     /*   padding: 10px; /* Reduce padding for smaller screens */
-     /*   height: 150px;
-        margin: 10px 0px; /* Add a little space on the right */
-       /* width: calc(100% - 10px); /* Full width minus margin for alignment */
-       /* }  */
 
 .card {
-    position: relative; /* Allow absolute positioning of children */
+   
     width: calc(92% - 30px); /* Adjust width to account for margins */
     flex-direction: column; /* Stack content vertically */
-    padding: 10px; /* Reduce padding for smaller screens */
+    padding: 5px; /* Reduce padding for smaller screens */
     height: 150px; /* Set desired height */
-    margin: 10px 0; /* Use uniform margin */
+    margin: 5px 0; /* Use uniform margin */
     overflow: hidden; /* Ensure content does not overflow */
 	}
 
@@ -161,7 +266,7 @@ h1, .cyber-world {
     left: 0; /* Align to the left of the card */
     width: 100%; /* Full width of the card */
     height: 100%; /* Full height of the card */
-    object-fit: cover; /* Cover the card area without distortion */
+    
     z-index: 1; /* Set a lower z-index to place it behind text */
     }
 
@@ -173,10 +278,7 @@ h1, .cyber-world {
     overflow: hidden; /* Ensure content does not overflow */
     }
 
-/*    p {
-        font-size: 0.8em;
-    }
-*/
+
 .card-content h2,
 .card-content p {
      margin: 0;
@@ -211,7 +313,12 @@ h1, .cyber-world {
       max-width: 300px; /* Optional: Set a maximum width */
       margin: 0 auto; /* Center the input fields */
     }
+    
+.con-button{
+	width: 80%;
+	}
 }
+
 {
 box-sizing: border-box; /* Apply box-sizing globally */
 }
