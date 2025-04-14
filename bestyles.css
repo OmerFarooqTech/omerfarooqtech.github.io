@@ -1,12 +1,13 @@
-body {
-    margin: 0;
-    background-color: #282F37;
-}
+/* *{
+    border: 1px solid red; /* Temporary border for debugging */
+/*}*/
 
+body{
+	font-family: Arial, sans-serif;
+	font-size: 0.875em;
+	}
 .banner {
-    text-align: left; /* Center text in the banner */
     position: fixed;
-    height: auto;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: row;
@@ -14,9 +15,10 @@ body {
     margin: 0;
     margin-bottom: 5px;
     z-index: 1000;
-    align-items: center;
     width: 100%;
-    background-color: #282F37;
+    background-color: #192841; /* x color #282F37 */
+    top: 0;
+
 }
 
 .banner::after {
@@ -29,32 +31,55 @@ body {
     background: linear-gradient(to right, #333333, #E5A50A, #333333);
 }
 
-h1 {
+h3 {
     font-size: clamp(24px, 3vw, 36px);
     color: #ADD8E6;
-    margin-left: 30px;
+    margin-left: 10px;
+
 }
+
+.pie{
+	display: flex;
+    align-items: center;
+	margin-bottom: 0;
+	}
 
 .cyber-world {
     color: #CCCCCC;
     font-size: clamp(24px, 3vw, 36px);
     display: flex;
     align-items: center;
+    margin-bottom: 0;
+}
+
+.pie a,
+.cyber-world a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from the parent element */
 }
 
 nav {
-    text-align: center; /* Center the menu items */
-    width: 50%; /* Ensure nav takes full width */
+    display: flex; /* Enable flexbox */
+    flex-direction: row; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Optional: space items evenly */
+	width: 75%;
+	height: 100%;
+	margin-left: auto;
 }
 
 .menu {
-    display: inline-block;
+    display: flex;
     color: #CCCCCC;
-    margin-top: 30px;
-}
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally (if needed) */
+    width: 100%;
+    }
 
 .menu > li {
-    display: inline;
+    display: flex;
     margin: 0 15px;
     position: relative;
     cursor: pointer;
@@ -67,25 +92,26 @@ nav {
 }
 
 .menu > li:hover {
-    border-top: 1px solid #CCCCCC;
-    border-bottom: 1px solid #cccccc;
+  /*  border-top: 1px solid #CCCCCC; */
+    border-bottom: 1px solid #E5A50A;
     transition: border 0.3s ease;
-    border-radius: 5px;
-    background-color: rgba(204, 204, 204, 0.1);
+
+  /*  background-color: rgba(204, 204, 204, 0.1); */
 }
 
 .dropdown {
     display: none;
     position: absolute;
-    background-color: #333333;
+    background-color: #282F37;
     border: 1px solid #cccccc;
     padding: 0px;
     list-style: none;
     z-index: 2000;
     white-space: nowrap;
-    border-radius: 5px;
+    border-radius: 3px;
     top: 100%;
     left: 0;
+    align-items: center;
     text-align: left;
 }
 
@@ -100,55 +126,74 @@ nav {
 }
 
 .dropdown li:hover {
-    background-color: #444444;
-    border-bottom: 1px solid #CCCCCC;
-    border-top: 1px solid #CCCCCC;
-    border-radius: 5px;
+        border-bottom: 1px solid #E5A50A;
+    transition: border 0.3s ease;
 }
 
-.social-media-placeholder {
-    display: flex;
-    flex-direction: column; /* Stack the button below the icons */
-    align-items: center; /* Align items to the right */
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    z-index: 1000;
+.so-bbbar{
+	margin-left: auto;
+	padding-right: 10px;
+	}
+
+.mobile-social {
+    display: inline-block; /* or use display: flex; */
+    width: auto; /* Ensures it only takes the width it needs */
+    /* Optional: Add padding or margin as needed */
+    padding: 0; /* Adjust padding if necessary */
+    margin: 0; /* Adjust margin if necessary */
+    margin-left: auto;
 }
 
 .social-icons {
-    display: flex; /* Keep social icons in a row */
-    justify-content: center;
+    display: flex; /* Align items in a row */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: flex-end; /* Align to the start */
+    width: fit-content; /* Only take the width it needs */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+    overflow: hidden; /* Prevent overflow */
+    
 }
 
 .social-icon {
-    width: 36px;
-    height: 36px;
+    width: 36px; /* Fixed width for icons */
+    height: 36px; /* Fixed height for icons */
     margin: 0 1.5px; /* Space between icons */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Center icons vertically */
+    justify-content: center; /* Center icons horizontally */
     color: white;
     font-size: 1.5em;
     transition: transform 0.3s;
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
 .social-icon:hover {
     transform: scale(1.1);
 }
 
+.mobile-download {
+    margin-top: 20px; /* Ensure there's space above the button */
+    display: flex; /* Ensure it behaves like a flex item */
+    align-items: center; /* Center vertically */
+    margin: 0;
+}
+
 .download-bbbar {
     display: block; /* Make the button a block element */
     background-color: #385D8D; /* Button background color */
     color: #FFFFFF; /* Button text color */
-    padding: 5px 10px; /* Padding for the button */
+    padding: 10px 15px; /* Adjust padding for better visibility */
     text-align: center; /* Center the text */
     text-decoration: none; /* Remove underline */
     border-radius: 5px; /* Rounded corners */
-    margin-top: 10px; /* Space above the button */
     transition: background-color 0.3s; /* Smooth background transition */
+    width: 100%; /* Allow the button to size based on content */
+    height: 10px;
+    z-index: 9000; /* Ensure it is on top */
+    margin-left: auto;
+    
 }
-
 .download-bbbar:hover {
     background-color: #2c4a6d; /* Darker shade on hover */
 }
