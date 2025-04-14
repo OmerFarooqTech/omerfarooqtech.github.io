@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #282F37; /* Dark Grey */
+    background-color: #192841; /* Dark Grey */
     font-size: 0.875em; /* Font size for each experience */
 }
 
@@ -43,7 +43,7 @@ h2 {
     justify-content: center;
     margin: 0 auto;
     padding: 0; /* Ensure no extra padding on the container */
-    height: 100vh;
+    height: 100vh; /* Full height of the viewport */
     align-items: center; /* Center vertically */
 }
 
@@ -95,7 +95,6 @@ h2 {
 .latest-news {
     height: 100vh; /* Full height of the viewport */
     padding: 20px;
-    background-color: #282F37; /* Dark Grey background */
     color: #FFFFFF; /* White text color */
     display: flex;
     flex-direction: column;
@@ -181,15 +180,27 @@ h2 {
 
 /* -----------------------------Xperience styling starts here----------------------------------  */
 
-.experience {
+.experience-container {
+    position: relative;
     height: 100vh; /* Full height of the viewport */
+    overflow: hidden;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column;
+    display: flex; /* Use Flexbox */
+}
+
+.experience {
+    width: 100%; /* Full width of the container */
+    max-width: 1200px; /* Optional: Limit the width for better readability */
     padding: 20px;
     color: #FFFFFF; /* White text color */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     text-align: center; /* Center text */
+    transition: transform 0.5s ease;
 }
 
 .bold-text {
@@ -207,7 +218,6 @@ h2 {
 .experience ul {
     list-style-type: none; /* Remove default list styling */
     padding: 0; /* Remove padding */
-    max-width: 1200px;
 }
 
 .experience li {
@@ -231,11 +241,28 @@ h2 {
     color: #000000; /* Change text color on hover */
 }
 
+.pre-button, .nex-button {
+	position: relative;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Add some space above the buttons */
+}
+}
+.pre-button, nex-button :hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
 
 /* ---------------------------Skills styling starts here------------------------------------  */
  
- .skills {
-    height: 100vh; /* Full height of the viewport */
+.skills {
+    height: 85vh; /* Full height of the viewport */
     padding: 20px;
     color: #FFFFFF; /* White text color */
     display: flex;
@@ -243,13 +270,14 @@ h2 {
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     text-align: center; /* Center text */
+    position: relative;
 }
 
 .skills h2 {
     margin-bottom: 20px; /* Space below the heading */
 }
 
-.skills ul {
+.slides {
     display: grid; /* Use grid layout */
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
     grid-template-rows: repeat(2, auto); /* Max 2 rows */
@@ -258,18 +286,19 @@ h2 {
     padding: 0; /* Remove padding */
 }
 
-.skills li {
+.slide {
     font-size: 1.2em; /* Font size for each skill */
     margin: 0; /* Remove margin for list items */
 }
 
-
-
+.prev, .next {
+    display: none; /* Hide buttons in desktop view */
+}
 /* ----------------------------Contact-me styling starts here----------------------------------- */
 .contact-me {
-    height: 100vh; /* Full height of the viewport */
+    height: 85vh; /* Full height of the viewport */
     padding: 20px;
-    background-color: #282F37; /* Dark Grey background */
+  /*  background-color: #282F37; /* Dark Grey background */
     color: #FFFFFF; /* White text color */
     display: flex;
     justify-content: center; /* Center content horizontally */
@@ -286,6 +315,7 @@ h2 {
     flex: 1; /* Allow the form to take available space */
     max-width: 400px; /* Limit the width of the form */
     margin-right: 160px; /* Increased space between form and dummy text */
+    position: relative;
 }
 
 .dummy-text {
@@ -320,16 +350,19 @@ input, textarea {
     color: #333; /* Dark text color for input fields */
 }
 
-button {
+.con-button {
+    margin-top: 10px; /* Add space above the button */
     padding: 10px 20px; /* Padding for the button */
     background-color: #007BFF; /* Button color */
     color: #FFFFFF; /* White text color */
     border: none; /* Remove border */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
+    display: block; /* Ensure it behaves like a block element */
+    width: 100%; /* Optional: make it full width */
 }
 
-button:hover {
+.con-button:hover {
     background-color: #0056b3; /* Darker button color on hover */
 	}
 
@@ -347,3 +380,4 @@ button:hover {
     opacity: 1; /* Fully visible */
     transform: translateY(0); /* Move to original position */
 }
+
