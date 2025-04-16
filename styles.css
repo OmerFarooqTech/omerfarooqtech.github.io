@@ -38,6 +38,7 @@ h2 {
 /*------------------------------Write up section Starts here ------------------------------*/
 
 .card-container {
+	height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -45,50 +46,86 @@ h2 {
     padding: 0; /* Ensure no extra padding on the container */
     height: 100vh; /* Full height of the viewport */
     align-items: center; /* Center vertically */
-}
+	flex-direction: column;
+	}
+
+.fnt-text{
+	white-space: nowrap; /* Prevent text from wrapping */
+    font-size: 48px; /* Adjust font size as needed */
+    color: white; /* Set text color for visibility */
+    font-weight: bold; /* Make the font bold */
+    letter-spacing: 10px; /* Add space between letters (adjust as needed) */
+    display: block;
+    position: absolute;
+	top: 120%;
+    }
 
 .card-fortiles {
-    display: flex; /* Use flexbox for the wrapper */
-    flex-wrap: wrap; /* Allow cards to wrap */
-    justify-content: center; /* Center the cards horizontally */
-    align-items: flex-start; /* Align cards at the top */
-    margin: 0; /* Remove any margin */
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+    gap: 20px; /* Space between the cards */
+    margin: 20px ; /* Add margin for spacing */
     
-}
+	}
 
 .card {
+    position: relative;
+    display: flex;
+    overflow: hidden;
     background-color: #7e5e60;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    margin: 10px 10px; /* Set vertical margin to 2px and horizontal margin to 10px */
-    width: calc(40% - 20px); /* Two cards per row */
-    padding: 20px;
-    min-height: 50px; /* Optional: Set a minimum height for consistency */
+    margin: 10px; /* Set vertical margin to 30px and horizontal margin to 15px */
+    flex-basis: calc(40% - 20px); /* Use flex-basis for the initial size */
+    max-width: 496px; /* Set max-width */
+    max-height: 184px; /* Set max-height */
+    padding: 15px;
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center; /* Align cards at the top */
+    flex-grow: 0; /* Prevent growing */
+    flex-shrink: 1; /* Allow shrinking */
+    }
     
+.card::before {
+    content: "";
+    display: block;
+    padding-top: 50%; /* For a 2:1 aspect ratio, use 50% */
 }
 
 .card-image {
-	width: 100%
-    height: 100%; /* Maintain aspect ratio */
+	flex: 0 0 40%;
     object-fit: cover; /* Cover the area while maintaining aspect ratio */
-	background-color: #f0f0f0; /* Different background color for the image area */
-    display: flex; /* Use flexbox to center content */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    text-decoration: none;
-}
+	background-color: black; /* Different background color for the image area */
+	position: relative;
+	overflow: hidden;
+	}
 
 .card-image img {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-}
+	position: absolute;
+	overflow: hidden;
+	object-fit: cover;
+    width: 40%;
+    height: 82%;
+    border-radius: 8px;
+    }
 
 .card-content {
+	position: relative;
     padding: 20px;
-    flex: 1;
-}
+    flex: 0 0 60%;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.2);
+   /* background: linear-gradient(to left, rgba(126, 94, 96, 1) 0%, rgba(126, 94, 96, 0) 100%); */
+    color: black;
+    border-radius: 8px;
+	height: 100%;
+	overflow-y: auto; /* Allow scrolling if content exceeds */
+	}
+
+.card-head{
+	font-size: 24px;
+	}
+
+
 
 /*------------------------------News styling starts here--------------------------------------*/
 
@@ -101,7 +138,7 @@ h2 {
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     text-align: center; /* Center text */
-}
+    }
 
 .latest-news h2 {
 
@@ -111,6 +148,7 @@ h2 {
 .latest-news ul {
     list-style-type: none; /* Remove default list styling */
     padding: 0; /* Remove default padding */
+    max-width: 1200px;
 }
 
 .latest-news li {
@@ -118,6 +156,7 @@ h2 {
     display: flex; /* Use flexbox to align items */
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Center items vertically */
+     max-width: 1200px;
 }
 
 .latest-news a {
@@ -234,6 +273,7 @@ h2 {
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s, color 0.3s; /* Transition effects */
+    margin-top: 20px;
 }
 
 .download-button:hover {
@@ -381,3 +421,6 @@ input, textarea {
     transform: translateY(0); /* Move to original position */
 }
 
+.hamburger {
+    display: none;
+}
