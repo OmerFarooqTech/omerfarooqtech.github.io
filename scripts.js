@@ -130,3 +130,25 @@ function changeSlide(direction) {
 showSlide(currentSlide);
 
 // this is the ending of badges section
+
+
+// begining section of mailsending-------------------------------------------------
+
+function sendEmail(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the values from the form
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Construct the mailto link
+    const mailtoLink = `mailto:your-email@hotmail.com?subject=Contact%20Form%20Submission&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0AMessage:%0A${encodeURIComponent(message)}`;
+
+    // Open the mail client
+    window.location.href = mailtoLink;
+
+    // Optionally, you can clear the form fields after sending
+    document.getElementById('contactForm').reset();
+}
+
