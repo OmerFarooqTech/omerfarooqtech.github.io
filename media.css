@@ -348,7 +348,7 @@ nav {
 	}
 }
 
-{
+*{
 box-sizing: border-box; /* Apply box-sizing globally */
 }
 
