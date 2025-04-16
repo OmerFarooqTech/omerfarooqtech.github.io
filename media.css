@@ -5,6 +5,7 @@
 
 body{
 	overflow-x: hidden; /* Prevent horizontal scrolling */
+	
     }
 
 h3  {
@@ -239,57 +240,86 @@ nav {
     }
 
 /* --------------------------- end of badges slides ------------------------- */
+.card-container{
+	position: relative;
+	}
+
 .card-fortiles {
-	height: 95vh;
+    height: 75vh; /* Keep the height of the container */
     display: flex; /* Ensure flexbox is applied */
     justify-content: flex-start; /* Align cards to the left */
     padding: 0; /* Add padding on the left and right */
     margin: 0;
-    margin-left: 0;
     max-width: 100%;
-	}
+    flex-direction: column; /* Stack content vertically */
+    position: relative;
+
+}
 
 .card {
-   
+	position: relative;
+    display: flex; /* Use flexbox for the card */
+    flex-direction: row; /* Align image and content side by side */
     width: calc(92% - 30px); /* Adjust width to account for margins */
-    flex-direction: column; /* Stack content vertically */
-    padding: 5px; /* Reduce padding for smaller screens */
-    height: 150px; /* Set desired height */
+    padding: 10px 0 10px 10px;
+    max-height: 150px; /* Set maximum height */
     margin: 5px 0; /* Use uniform margin */
     overflow: hidden; /* Ensure content does not overflow */
-	}
+    background-color: rgba(126, 94, 96, 0.8); /* Semi-transparent background for readability */
+    }
+
+.fnt-text {
+    position: absolute; /* Position the text absolutely within the card */
+    right: -20px; /* Adjust this value to position the text outside the card */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%) rotate(90deg); /* Rotate the text and center it */
+    white-space: nowrap; /* Prevent text from wrapping */
+    font-size: 48px; /* Adjust font size as needed */
+    color: white; /* Set text color for visibility */
+    z-index: 3; /* Ensure it appears above other elements */
+    font-weight: bold; /* Make the font bold */
+    letter-spacing: 10px; /* Add space between letters (adjust as needed) */
+    right: -135px;
+}
 
 .card-image {
-    position: absolute; /* Position the image absolutely */
-    top: 0; /* Align to the top of the card */
-    left: 0; /* Align to the left of the card */
-    width: 100%; /* Full width of the card */
-    height: 100%; /* Full height of the card */
-    
-    z-index: 1; /* Set a lower z-index to place it behind text */
-    }
+    flex: 0 0 40%; /* Set the image to take up 40% of the card width */
+    position: relative; /* Position relative to the card */
+    overflow: hidden; /* Ensure the image does not overflow */
+}
+
+.card-image img {
+    width: 100%; /* Full width of the image container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+}
 
 .card-content {
-    position: relative; /* Position content relative to the card */
-    padding: 8px; /* Reduce padding in card content */
-    background-color: rgba(126, 94, 96, 0.8); /* Semi-transparent background for readability */
+    flex: 1; /* Allow content to take the remaining space */
     z-index: 2; /* Set a higher z-index to place it above the image */
-    overflow: hidden; /* Ensure content does not overflow */
+    display: flex; /* Use flexbox for the content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    color: lightgrey; /* Set text color for visibility */
+    overflow: hidden;
+    border-top-right-radius: 0; /* Remove border radius on the top right */
+    border-bottom-right-radius: 0; /* Remove border radius on the bottom right */
     }
-
 
 .card-content h2,
 .card-content p {
-     margin: 0;
-	 overflow: hidden; /* Prevent overflow */
-     white-space: nowrap; /* Prevent text from wrapping */
-     text-overflow: ellipsis; /* Show ellipsis for overflowed text */
-    }
+    margin: 0;
+    overflow: hidden; /* Prevent overflow */
+    margin-bottom: 8px;
+    text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+}
 
 .contact-content {
-      display: flex;
-      flex-direction: column; /* Stack elements vertically */
-    }
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* --------------------------- end of cards slides ------------------------- */
 
 .dummy-text,
 .form-container {
