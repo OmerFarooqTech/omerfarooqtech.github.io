@@ -4,10 +4,9 @@
     border: 1px solid red; /* Temporary border for debugging */
 }
 
-body{
-	overflow-x: hidden; /* Prevent horizontal scrolling */
-	
-    }
+*{
+	overflow-x: hidden;
+	}
 
 h3  {
 	font-size: clamp(24px, 3vw, 36px);
@@ -19,6 +18,9 @@ h3  {
 
 .banner {
 	text-align: center; /* Center text */
+	overflow: hidden;
+	width: 100%;
+	display: flex;
     }
 
 nav {
@@ -128,7 +130,7 @@ nav {
 .pie {
     display: inline-block;
     vertical-align: middle;
-    margin: 10px 10px; /* Adjust horizontal spacing as desired */
+    margin: 10px 0px 10px 10px; /* Adjust horizontal spacing as desired */
     width: 13%;
     text-decoration: none;
     }
@@ -351,7 +353,7 @@ nav {
 	}
 }
 
-*{
+{
 box-sizing: border-box; /* Apply box-sizing globally */
 }
 
