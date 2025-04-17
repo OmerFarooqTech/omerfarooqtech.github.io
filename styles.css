@@ -422,3 +422,16 @@ input, textarea {
     opacity: 1; /* Fully visible */
     transform: translateY(0); /* Move to original position */
 }
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: block; /* Show on desktop */
+        position: fixed; /* Fix position */
+        bottom: -100px; /* Move it out of view */
+        right: 20px; /* Position from the right */
+    }
+
+    .cross-button {
+        display: none; /* Keep cross button hidden on desktop */
+    }
+}
