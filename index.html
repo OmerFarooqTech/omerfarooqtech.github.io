@@ -243,7 +243,7 @@ I am always eager to connect with fellow professionals and enthusiasts. Feel fre
     <div class="contact-content">
         <div class="form-container">
             <h2>Contact Me</h2>
-             <form id="contactForm" onsubmit="sendEmail(event)">
+             <form id="contactForm" action="send_email.php" method="POST">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -266,6 +266,25 @@ I am always eager to connect with fellow professionals and enthusiasts. Feel fre
         </div>
     </div>
 </div>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
+
+    $to = "your-email@hotmail.com"; // Your email address
+    $subject = "Contact Form Submission from $name";
+    $body = "Name: $name\nEmail: $email\nMessage:\n$message";
+    $headers = "From: $email";
+
+    if (mail($to, $subject, $body, $headers)) {
+        echo "Email sent successfully!";
+    } else {
+        echo "Email sending failed.";
+    }
+}
+?>
 
 <script src="scripts.js"></script>
 
