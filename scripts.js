@@ -2,9 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const crossButton = document.querySelector('.cross-button');
     const menu = document.querySelector('.menu');
+    
+     // Check if elements are found
+    if (!hamburger || !crossButton || !menu) {
+        console.error('One or more elements not found. Check your HTML structure.');
+        return; // Exit if elements are not found
+    }
 
     // Toggle the menu when the hamburger button is clicked
     hamburger.addEventListener('click', function() {
+		console.log('Hamburger clicked');
         menu.classList.toggle('active'); // Toggle the 'active' class on the menu
         hamburger.style.display = 'none'; // Hide the hamburger button
         crossButton.style.display = 'block'; // Show the cross button
@@ -16,6 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.style.display = 'block'; // Show the hamburger button
         crossButton.style.display = 'none'; // Hide the cross button
     });
+    
+    // Function to close the menu and reset buttons
+    function closeMenu() {
+        menu.classList.remove('active'); // Remove the 'active' class from the menu
+        hamburger.style.display = 'block'; // Show the hamburger button
+        crossButton.style.display = 'none'; // Hide the cross button
+    }
 
 // above section is for cross button and burger button
 
@@ -131,7 +145,6 @@ showSlide(currentSlide);
 
 // this is the ending of badges section
 
-
 // begining section of mailsending-------------------------------------------------
 
 function sendEmail(event) {
@@ -151,4 +164,3 @@ function sendEmail(event) {
     // Optionally, you can clear the form fields after sending
     document.getElementById('contactForm').reset();
 }
-
