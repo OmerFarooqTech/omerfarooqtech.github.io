@@ -41,6 +41,7 @@ h3 {
 .pie{
 	display: flex;
     align-items: center;
+    justify-content: center;
 	margin-bottom: 0;
 	}
 
@@ -49,14 +50,21 @@ h3 {
     font-size: clamp(24px, 3vw, 36px);
     display: flex;
     align-items: center;
-    margin-bottom: 0;
-}
+    }
+
+.pie,
+.cyber-world{
+	margin: 10px 0px 10px 10px;
+	justify-content: center;
+	align-items: center;
+	}
 
 .pie a,
 .cyber-world a {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit the color from the parent element */
-}
+    align-items: center;
+    }
 
 nav {
     display: flex; /* Enable flexbox */
@@ -102,7 +110,7 @@ nav {
 .dropdown {
     display: none;
     position: absolute;
-    background-color: #282F37;
+    background-color: #192841;
     border: 1px solid #cccccc;
     padding: 0px;
     list-style: none;
@@ -191,7 +199,7 @@ nav {
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s; /* Smooth background transition */
     width: 100%; /* Allow the button to size based on content */
-    height: 30px;
+    height: 10px;
     z-index: 9000; /* Ensure it is on top */
     margin-left: auto;
     }
@@ -235,12 +243,21 @@ footer {
     background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
 }
 
-.hamburger {
-    display: none; /* Hide by default */
-}
-
 @media (min-width: 560px) { /* Adjust the min-width as needed for your design */
     .cross-button {
         display: none !important; /* Hide the close button */
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: block; /* Show on desktop */
+        position: fixed; /* Fix position */
+        bottom: -100px; /* Move it out of view */
+        right: 20px; /* Position from the right */
+    }
+
+    .cross-button {
+        display: none; /* Keep cross button hidden on desktop */
     }
 }
