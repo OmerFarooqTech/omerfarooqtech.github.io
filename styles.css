@@ -115,7 +115,7 @@ h2 {
     z-index: 2;
     background-color: rgba(0,0,0,0.2);
    /* background: linear-gradient(to left, rgba(126, 94, 96, 1) 0%, rgba(126, 94, 96, 0) 100%); */
-    color: black;
+    color: darkgrey;
     border-radius: 8px;
 	height: 100%;
 	overflow-y: auto; /* Allow scrolling if content exceeds */
@@ -125,7 +125,9 @@ h2 {
 	font-size: 24px;
 	}
 
-
+.card a{
+	text-decoration: none; /* Remove underline */
+	}
 
 /*------------------------------News styling starts here--------------------------------------*/
 
@@ -293,7 +295,7 @@ h2 {
     transition: background-color 0.3s;
     margin-top: 20px; /* Add some space above the buttons */
 }
-}
+
 .pre-button, nex-button :hover {
     background-color: #0056b3; /* Darker shade on hover */
 }
@@ -419,8 +421,4 @@ input, textarea {
 .slide-up.visible {
     opacity: 1; /* Fully visible */
     transform: translateY(0); /* Move to original position */
-}
-
-.hamburger {
-    display: none;
 }
