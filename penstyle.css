@@ -1,0 +1,44 @@
+ body {
+            margin: 0;
+            padding: 0;
+            background-color: #192841; /* Background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            color: grey; /* Text color */
+            font-family: Arial, sans-serif; /* Font family */
+        }
+
+        .container {
+            text-align: center; /* Center text */
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent; /* Left side of triangle */
+            border-right: 100px solid transparent; /* Right side of triangle */
+            border-bottom: 150px solid #4A4A4A; /* Dark grey color for the triangle */
+            position: relative;
+            margin-bottom: -30px; /* Adjust to overlap the exclamation mark */
+            border-radius: 10px; /* Round corners of the triangle */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .exclamation {
+            font-size: 80px; /* Size of the exclamation mark */
+            position: absolute; /* Position inside the triangle */
+            top: 500px; /* Adjust position to center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center the exclamation mark */
+            color: white; /* Color of the exclamation mark */
+            z-index: 1000;
+        }
+
+        .coming-soon {
+            font-size: 40px; /* Size of the text */
+            font-weight: bold; /* Bold text */
+            margin-top: 20px; /* Space between triangle and text */
+        }
