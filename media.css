@@ -4,8 +4,8 @@
     border: 1px solid red; /* Temporary border for debugging */
 }
 
-*{
-	overflow-x: hidden;
+{
+	overflow: hidden;
 	}
 
 h3  {
@@ -40,6 +40,7 @@ nav {
 }
 
 .menu > li {
+	position: relative;
     display: block; /* Stack menu items vertically */
     margin: 10px 0; /* Space between items */
     width: 100%;
@@ -162,12 +163,30 @@ nav {
     padding: 8px 12px; /* Adjust padding for smaller screens */
     }
 
+.dropdown {
+    position: absolute;
+    background-color: #192841;
+    border: 1px solid #cccccc;
+    padding: 0px;
+    list-style: none;
+    z-index: 2000;
+    white-space: nowrap;
+    border-radius: 3px;
+    top: 100%;
+    left: 0;
+    text-align: left;
+    width: 80vw; /* Set width */
+    height: calc(40vh - 10px);
+	align-items: center; /* Center items vertically */
+    justify-content: flex-end; /* Align items to the right */
+}
+
     /* ----------------------experiance section starts here------------------------ */
     
 .experience-container {
     position: relative;
     height: 95vh; /* Full height of the viewport */
-    width: 100vw;
+    width: 100%;
 }
 
 .experience {
@@ -181,7 +200,7 @@ nav {
 
 .skills {
         height: 95vh;
-        width: 100vw; /* Full width of the viewport */
+        width: 100%; /* Full width of the viewport */
        /* background: #282F37; */
         padding: 0;
         overflow: hidden;
@@ -275,7 +294,6 @@ nav {
 
 .fnt-text {
     position: absolute; /* Position the text absolutely within the card */
-    right: -20px; /* Adjust this value to position the text outside the card */
     top: 50%; /* Center vertically */
     transform: translateY(-50%) rotate(90deg); /* Rotate the text and center it */
     white-space: nowrap; /* Prevent text from wrapping */
@@ -284,7 +302,7 @@ nav {
     z-index: 3; /* Ensure it appears above other elements */
     font-weight: bold; /* Make the font bold */
     letter-spacing: 10px; /* Add space between letters (adjust as needed) */
-    right: -135px;
+    right: -127px;
 }
 
 .card-image {
@@ -353,7 +371,7 @@ nav {
 	}
 }
 
-{
+*{
 box-sizing: border-box; /* Apply box-sizing globally */
 }
 
